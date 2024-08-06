@@ -1,14 +1,24 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
 
 function App() {
-
-  let counter = 15
+const [counter, setCounter] = useState(0)
+  // let counter = 15
   const plus = ()=>{
     console.log("value added",counter);
-    counter = counter +1
+    // counter = counter +1
+    setCounter(counter+1)
+
+   
+    }
+    const min = ()=>{
+      // console.log("value added",counter);
+      // counter = counter +1
+      if (counter>0){
+        setCounter(counter-1)
+
+      }
 
   }
 
@@ -16,11 +26,11 @@ function App() {
     <>
     <h1>chai aur reacttt</h1>
     <h1>counter value : {counter} </h1>
-
+<p>Footer :{counter}</p>
     <button
     onClick={plus}
     >plus</button>
-    <button>minusss</button>
+    <button onClick={min}>minusss</button>
 
 
     </>
